@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Kanit", sans-serif;
+}
+
+/* Custom styles and helper classes */
+:root {
+  background-color: #0A0118;
+  color: #D7E2EA;
+}
+
+html, body, #root {
+  background-color: #0A0118 !important;
+  font-family: "Kanit", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+
+/* Glass card style */
+.glass-card {
+  background: rgba(124, 58, 237, 0.06);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  transition: all 400ms cubic-bezier(0.25, 0.1, 0.25, 1);
+}
+
+.glass-card:hover {
+  box-shadow: 0 0 24px rgba(124, 58, 237, 0.45);
+  border-color: rgba(168, 85, 247, 0.50);
+}
+
+/* Hero Heading */
+.hero-heading {
+  background: linear-gradient(135deg, #C9A8FF 0%, #8B5CF6 50%, #4F8CFF 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Accent Gradient background utility */
+.bg-accent-gradient {
+  background: linear-gradient(135deg, #1A0B2E 0%, #7C3AED 50%, #2563EB 100%);
+}
+
+/* Custom scrollbars */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0A0118;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(168, 85, 247, 0.3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(168, 85, 247, 0.6);
+}
+
+/* Hide default cursor on devices that support hover */
+@media (hover: hover) {
+  body, a, button, [role="button"] {
+    cursor: none !important;
+  }
+}
+
