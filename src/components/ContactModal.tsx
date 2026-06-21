@@ -62,10 +62,10 @@ export default function ContactModal({ isOpen, onClose }: ContactModalProps) {
         setStatus('error');
       }
     } else {
-      // If environment token is missing, provide a robust UX asking user to configure or use Fallback mailto directly
-      // Rather than silently failing, we display a beautiful choice in error state to let them choose
-      setErrorMsg("VITE_WEB3FORMS_KEY is not declared in environment config.");
-      setStatus('error');
+      // If environment token is missing, provide a robust experience by automatically trigger mailto dispatch
+      // This ensures 100% reliability for serverless hosting like Netlify without prior setup
+      console.warn("VITE_WEB3FORMS_KEY is not declared. Initiating direct mailto fallback.");
+      triggerMailtoFallback();
     }
   };
 
